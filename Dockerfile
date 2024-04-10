@@ -1,7 +1,8 @@
-FROM quay.io/souravkl11/rgnk-v3:latest
+FROM kratos md
 
-RUN git clone https://github.com/souravkl11/raganork-md /railway/Raganork
-WORKDIR /railway/Raganork
+RUN git clone https://github.com/drexmose/kratos-md /root/drex
+WORKDIR /root/kratos
 ENV TZ=Africa/Nairobi
-RUN yarn install --network-concurrency 1
-CMD ["node", "index.js"]
+RUN npm install
+EXPOSE 3000
+CMD ["npm", "start"]
